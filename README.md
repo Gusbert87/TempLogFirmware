@@ -2,3 +2,5 @@
 An arduino firmware for temperature logging software.
 The hardware is based on an ATmega2560 board with PNP constant current generators and PT1000 sensors connected to analog inputs.
 The firmware relies on a simple serial communication protocol to send the temperatures, adjust calibration, and set the number of connected PT1000, with a maximum of 16 channels.
+
+This is packet as a PlatformIO project, but you can just download the src/ folder and import it in any other IDE.
