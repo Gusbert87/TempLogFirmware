@@ -55,8 +55,8 @@ void loop() {
 	if(command & COMMAND_GET_SETTINGS)
 	{
 		Settings temp = serialCom.GetAvaiableSettings();
-		Serial.print("\n");
-		Serial.println(temp.n);
+		// Serial.print("\n");
+		// Serial.println(temp.n);
 		tempSensor.SetSettings(temp);
 	}
 	

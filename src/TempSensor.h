@@ -66,7 +66,7 @@ class TempSensor {
 		byte GetLastOhm(float lastReadReturn[], byte &n);      //return the last resistance measured
 
 		Settings GetSettings() 					{return settings;}              			//return the settings from the private property.
-		void SetSettings(Settings newSettings) 	{settings = newSettings;}	  				//set the given settings to the private property.
+		void SetSettings(Settings newSettings) 	{settings = newSettings; StoreEEPROM();}	//set the given settings to the private property and store to eeprom.
 		I GetCalibrations()						{return ampere;}							//return the ampere value of the current generators.
 		bool isInit()							{return flags & FLAG_INIT_OK;}				//return if the object is inited.
 		

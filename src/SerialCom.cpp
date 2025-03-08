@@ -70,10 +70,10 @@ void SerialCom::ParseData()
     const char separator[] = {INPUT_SEPARATOR, '\0'};
 		char *temp;
 		byte i;
-		Serial.println(inputChars+1);
+		//Serial.println(inputChars+1);
 		temp = strtok( inputChars + 1, separator);
-    Serial.println(temp);
-    Serial.println(atoi(temp));
+    	//Serial.println(temp);
+    	//Serial.println(atoi(temp));
 		settings.n = atoi(temp);
 		
 		if(settings.n>16) settings.n=0;
@@ -116,7 +116,7 @@ void SerialCom::ParseData()
 		flags |= FLAG_CALIBRATION_ARRIVED;
 	}
 	
-	flags &= B11111101;
+	flags &= ~FLAG_DATA_AVAILABLE;//B11111101;
 	#ifdef SERIAL_DEBUG
 	Serial.print("flags= ");
 	Serial.println(flags, BIN);

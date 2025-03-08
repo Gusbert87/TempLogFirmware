@@ -122,10 +122,10 @@ void TempSensor::Execute()
 			}
 		}	
 	
-		if( flags & B00000010 )
+		if( flags & FLAG_SAVE_SETTINGS )
 		{
 			StoreEEPROM();
-			flags &= B11111101;
+			flags &= ~FLAG_SAVE_SETTINGS;
 		}
 	}
 }
